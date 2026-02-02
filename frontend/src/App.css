@@ -1,0 +1,588 @@
+/* ========================================
+   EARTHY COLOR PALETTE - NATURAL & CALM
+======================================== */
+:root {
+  /* Earthy Primary Colors */
+  --forest-green: #2D5F3F;
+  --moss-green: #4A7C59;
+  --sage-green: #6B8E7F;
+  --olive-green: #87A878;
+  
+  /* Natural Accent Colors */
+  --clay-orange: #C8814F;
+  --terracotta: #B85C38;
+  --earth-brown: #8B6F47;
+  --sand-beige: #D4A574;
+  
+  /* Neutral Earth Tones */
+  --stone-gray: #7D8471;
+  --pebble-gray: #9FA799;
+  --soft-cream: #F5F1E8;
+  --warm-white: #FDFAF5;
+  
+  /* Background Colors */
+  --bg-cream: #FAF7F0;
+  --bg-white: #FFFFFF;
+  --bg-light-green: #F0F4F1;
+  --bg-sage: #E8EDE9;
+  
+  /* Text Colors */
+  --text-dark: #2C3E2C;
+  --text-medium: #4A5D4A;
+  --text-light: #6B7D6B;
+  --text-muted: #8B9B8B;
+  
+  /* Card Border Colors */
+  --border-green: #D0DDD0;
+  --border-light: #E5EBE5;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(45, 95, 63, 0.08);
+  --shadow-md: 0 4px 8px rgba(45, 95, 63, 0.12);
+  --shadow-lg: 0 8px 16px rgba(45, 95, 63, 0.16);
+  
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   HERO SECTION - CALM & NATURAL
+======================================== */
+.hero-section {
+  background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss-green) 100%);
+  padding: 4rem 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.hero-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.hero-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--warm-white);
+  stroke-width: 1.5;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--warm-white);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logout-icon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--warm-white);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.subtitle-icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+}
+
+.separator {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ========================================
+   DASHBOARD CONTAINER
+======================================== */
+.dashboard-container {
+  padding: 3rem 1rem;
+  max-width: 1400px;
+  flex: 1;
+}
+
+/* ========================================
+   DASHBOARD CARDS - EARTHY & PROFESSIONAL
+======================================== */
+.dashboard-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Card Headers with Earthy Colors */
+.card-header-custom {
+  padding: 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border-bottom: 2px solid var(--border-green);
+}
+
+.card-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.card-icon {
+  width: 28px;
+  height: 28px;
+  stroke-width: 2;
+}
+
+.card-title-group {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.3px;
+}
+
+.card-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Disasters Card - Terracotta/Orange */
+.disasters-card .card-header-custom {
+  background: linear-gradient(135deg, rgba(184, 92, 56, 0.08) 0%, rgba(200, 129, 79, 0.05) 100%);
+}
+
+.disasters-card .card-icon-wrapper {
+  background: linear-gradient(135deg, var(--terracotta), var(--clay-orange));
+}
+
+.disasters-card .card-icon {
+  color: var(--warm-white);
+}
+
+.disasters-card:hover {
+  border-color: var(--terracotta);
+}
+
+/* Volunteers Card - Forest Green */
+.volunteers-card .card-header-custom {
+  background: linear-gradient(135deg, rgba(45, 95, 63, 0.08) 0%, rgba(74, 124, 89, 0.05) 100%);
+}
+
+.volunteers-card .card-icon-wrapper {
+  background: linear-gradient(135deg, var(--forest-green), var(--moss-green));
+}
+
+.volunteers-card .card-icon {
+  color: var(--warm-white);
+}
+
+.volunteers-card:hover {
+  border-color: var(--forest-green);
+}
+
+/* Resources Card - Sage Green */
+.resources-card .card-header-custom {
+  background: linear-gradient(135deg, rgba(107, 142, 127, 0.08) 0%, rgba(135, 168, 120, 0.05) 100%);
+}
+
+.resources-card .card-icon-wrapper {
+  background: linear-gradient(135deg, var(--sage-green), var(--olive-green));
+}
+
+.resources-card .card-icon {
+  color: var(--warm-white);
+}
+
+.resources-card:hover {
+  border-color: var(--sage-green);
+}
+
+/* Requests Card - Earth Brown */
+.requests-card .card-header-custom {
+  background: linear-gradient(135deg, rgba(139, 111, 71, 0.08) 0%, rgba(212, 165, 116, 0.05) 100%);
+}
+
+.requests-card .card-icon-wrapper {
+  background: linear-gradient(135deg, var(--earth-brown), var(--sand-beige));
+}
+
+.requests-card .card-icon {
+  color: var(--warm-white);
+}
+
+.requests-card:hover {
+  border-color: var(--earth-brown);
+}
+
+/* Zones Card - Stone Gray */
+.zones-card .card-header-custom {
+  background: linear-gradient(135deg, rgba(125, 132, 113, 0.08) 0%, rgba(159, 167, 153, 0.05) 100%);
+}
+
+.zones-card .card-icon-wrapper {
+  background: linear-gradient(135deg, var(--stone-gray), var(--pebble-gray));
+}
+
+.zones-card .card-icon {
+  color: var(--warm-white);
+}
+
+.zones-card:hover {
+  border-color: var(--stone-gray);
+}
+
+/* Distribution Card - Moss Green */
+.distribution-card .card-header-custom {
+  background: linear-gradient(135deg, rgba(74, 124, 89, 0.08) 0%, rgba(107, 142, 127, 0.05) 100%);
+}
+
+.distribution-card .card-icon-wrapper {
+  background: linear-gradient(135deg, var(--moss-green), var(--sage-green));
+}
+
+.distribution-card .card-icon {
+  color: var(--warm-white);
+}
+
+.distribution-card:hover {
+  border-color: var(--moss-green);
+}
+
+/* Card Body */
+.card-body-custom {
+  padding: 1.75rem;
+  flex: 1;
+  overflow-y: auto;
+  max-height: 500px;
+  background: var(--bg-white);
+}
+
+/* Custom Scrollbar - Earthy Style */
+.card-body-custom::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card-body-custom::-webkit-scrollbar-track {
+  background: var(--bg-sage);
+  border-radius: var(--radius-sm);
+}
+
+.card-body-custom::-webkit-scrollbar-thumb {
+  background: var(--sage-green);
+  border-radius: var(--radius-sm);
+}
+
+.card-body-custom::-webkit-scrollbar-thumb:hover {
+  background: var(--moss-green);
+}
+
+/* ========================================
+   FOOTER - NATURAL & CLEAN
+======================================== */
+.footer-section {
+  background: var(--bg-light-green);
+  border-top: 2px solid var(--border-green);
+  padding: 2.5rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--forest-green);
+  stroke-width: 2;
+}
+
+.footer-brand {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--forest-green);
+  letter-spacing: -0.3px;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-icon-wrapper {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .hero-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-header-actions {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .dashboard-container {
+    padding: 2.5rem 1rem;
+  }
+  
+  .card-header-custom {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-icon-wrapper {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .card-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    padding: 3rem 0 2.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-icon-wrapper {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hero-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .logout-button {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .dashboard-container {
+    padding: 2rem 0.75rem;
+  }
+  
+  .card-header-custom {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.125rem;
+  }
+  
+  .card-subtitle {
+    font-size: 0.8125rem;
+  }
+  
+  .card-body-custom {
+    padding: 1.25rem;
+    max-height: 400px;
+  }
+  
+  .footer-section {
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9375rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .separator {
+    display: none;
+  }
+  
+  .card-header-custom {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+  
+  .card-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .card-icon {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .card-body-custom {
+    max-height: 350px;
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+======================================== */
+@media print {
+  .hero-section,
+  .footer-section {
+    display: none;
+  }
+  
+  .dashboard-card {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid var(--border-green);
+  }
+  
+  body {
+    background: white;
+  }
+}

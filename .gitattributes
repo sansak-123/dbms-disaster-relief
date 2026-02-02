@@ -1,0 +1,17 @@
+# Normalize line endings across OS
+* text=auto
+
+# Treat all JS/JSON/HTML/CSS as UTF-8 text
+*.js text eol=lf
+*.jsx text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+
+# Mark images as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary

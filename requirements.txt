@@ -1,0 +1,15 @@
+# Backend Dependencies
+express
+mongoose
+cors
+dotenv
+body-parser
+nodemon
+
+# Frontend Dependencies
+react
+react-dom
+react-bootstrap
+axios
+lucide-react
+bootstrap

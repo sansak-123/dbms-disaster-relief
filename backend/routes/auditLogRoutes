@@ -1,0 +1,25 @@
+const express = require("express");
+const router = express.Router();
+const AuditLog = require("../models/AuditLog");
+
+// ✅ GET all audit logs (sorted by latest)
+router.get("/", async (req, res) => {
+  try {
+    const logs = await AuditLog.find().sort({ timestamp: -1 });
+    res.json(logs);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ✅ DELETE all logs (optional, for cleanup)
+router.delete("/", async (req, res) => {
+  try {
+    await AuditLog.deleteMany({});
+    res.json({ message: "All logs cleared" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+module.exports = router;
